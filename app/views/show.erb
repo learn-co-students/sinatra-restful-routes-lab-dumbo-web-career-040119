@@ -1,0 +1,18 @@
+<h1> Getting hungry? Prepare <%= @recipe.name %></h1>
+
+<a href='/recipes/<%= @recipe.id %>/edit'>Edit this recipe</a>
+
+<h2><%= @recipe.name %></h2>
+  <h3>Ingredients:</h3>
+  <%= @recipe.ingredients %><br>
+  <h3>Cook Time:</h3>
+  <%= @recipe.cook_time %> minutes<br>
+
+
+<form method="POST" action="/recipes/<%=@recipe.id%>">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="delete" />
+</form>
+
+<br>
+<a href='/recipes'>View other recipes</a>
